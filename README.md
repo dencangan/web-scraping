@@ -1,6 +1,12 @@
 # web scraping
-## Tutorial
-This section provides an introduction and basic tutorial for beginners interested at learning how to web scrape.
+Projects
+- crypto price scraper
+- wiki summariser
+- amazon deal tracker (buggy)
+- trading stimulator (development)
+
+## Basic Web Scraping Tutorial
+The below section provides an introduction and basic tutorial for beginners interested at learning how to web scrape.
 
 ## Table of Contents
 * [Introduction](#introduction)
