@@ -1,6 +1,6 @@
 """Navigating through HTML with BeautifulSoup"""
 
-from get_request import get_resp
+from tutorial.get_request import get_resp
 from bs4 import BeautifulSoup
 
 
