@@ -34,7 +34,6 @@ class AmazonDeals:
 
         driver.get(self.amazon_link)
         element = driver.find_element_by_xpath('//*[@id="twotabsearchtextbox"]')
-        #element = driver.find_element_by_xpath('//*[@id="twotabsearchtextbox"]')
         element.send_keys(self.search_product)
         element.send_keys(Keys.ENTER)
         return driver
@@ -89,9 +88,9 @@ if __name__ == '__main__':
 
     deals = AmazonDeals(num_pages=1, search_product='headphones')
 
-    driver = deals.selenium_job()
+    initiate = deals.selenium_job()
 
-    df = deals.run(driver)
+    df = deals.run(initiate)
 
     # options = webdriver.ChromeOptions()
     # options.add_argument('--ignore-certificate-errors')
