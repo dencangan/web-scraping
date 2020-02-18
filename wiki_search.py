@@ -26,4 +26,4 @@ def wiki_summariser(search_term, num_lines=5):
 
 
 if __name__ == '__main__':
-    wiki_summariser(search_term='blanket')
+    wiki_summariser(search_term='water bottle')
