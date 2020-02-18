@@ -22,8 +22,8 @@ class AmazonDeals:
         self.num_pages = num_pages
         self.amazon_link = 'https://www.amazon.co.uk/'
 
-    def selenium_job(self):
-        """Runs Selenium job (Chrome) to search input product"""
+    def run(self):
+        """Full run on scraping product details, returns pandas data frame"""
 
         options = webdriver.ChromeOptions()
         options.add_argument('--ignore-certificate-errors')
@@ -33,13 +33,9 @@ class AmazonDeals:
                                   options=options)
 
         driver.get(self.amazon_link)
-        element = driver.find_element_by_xpath('//*[@id="twotabsearchtextbox"]')
+        element = driver.find_element_by_xpath('//input[@id="twotabsearchtextbox"]')
         element.send_keys(self.search_product)
         element.send_keys(Keys.ENTER)
-        return driver
-
-    def run(self, driver):
-        """Full run on scraping product details, returns pandas data frame"""
 
         self.num_pages += 2
         lst_pages = [x for x in list(range(self.num_pages))][2:]
@@ -87,13 +83,4 @@ class AmazonDeals:
 if __name__ == '__main__':
 
     deals = AmazonDeals(num_pages=1, search_product='headphones')
-
-    initiate = deals.selenium_job()
-
-    df = deals.run(initiate)
-
-    # options = webdriver.ChromeOptions()
-    # options.add_argument('--ignore-certificate-errors')
-    # driver = webdriver.Chrome("/Users/kalle/Downloads/chromedriver", chrome_options=options)
-    # driver.get(best_deal_product.link)
-    # driver.find_element_by_tag_name('body').send_keys(Keys.COMMAND + 't')
+    df = deals.run()
