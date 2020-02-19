@@ -2,28 +2,36 @@ from googlesearch import search
 from utils import soupify
 
 
-def wiki_summariser(search_term, num_lines=5):
+def wiki_summariser(search_term=None, num_lines=5, randomise=False):
     """Displays first 5 lines of a wikipedia page
 
     Args:
         search_term (str): Key word to search.
         num_lines (int): Number of lines to display.
+        randomise (bool): Gets random wikipedia article
 
     Returns:
         Prints output.
     """
 
-    wiki_page = list(search(query=search_term, domains=['https://en.wikipedia.org/'], tld="com", num=10, stop=3, pause=1))
+    if randomise is True:
+        soup = soupify("https://en.wikipedia.org/wiki/Special:Random")
+        link = soup.find("link", rel="canonical")
+        link = link["href"]
 
-    soup = soupify(wiki_page[0])
+    else:
+        wiki_page = list(search(query=search_term, domains=['https://en.wikipedia.org/'], tld="com", num=10, stop=3, pause=1))
+        link = wiki_page[0]
+        soup = soupify(link)
 
     article = []
     for x in (soup.select('p')):
         article.append(x.text)
 
     result = ''.join(article[:num_lines])
-    return print(result)
+
+    return result + "\n" + link
 
 
 if __name__ == '__main__':
-    wiki_summariser(search_term='water bottle')
+    print(wiki_summariser(randomise=True))
