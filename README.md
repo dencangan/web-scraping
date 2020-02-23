@@ -1,4 +1,4 @@
-# web scraping
+# Web Scraping with Python
 Mini web scraping projects using Python and BeautifulSoup!
 
 ## Prerequisites
@@ -7,14 +7,14 @@ To get the below scripts to work, install the below packages.
 * [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
 * [google-search](https://pypi.org/project/google-search/)
 
-## Projects
-- wiki_search.py - Scrapes first few sentences from a specified wikipedia page.
-- quotes.py - Scrapes randomised quotes from https://www.goodreads.com/quotes
-- trading_view.py - Scrapes financial asset data (cryptos, stocks, currencies and indices) https://uk.tradingview.com/
-- amazon_deals.py - Scrapes for specified amazon product.
-- crypto_scrape.py - Scrapes from cryptocurrency data from https://coinmarketcap.com/
+## Scripts
+- wiki_search.py - Scrapes first few sentences of a specified search term from its wikipedia page for a quick summary.
+- trading_view.py - Scrapes financial asset data (cryptos, stocks, currencies and indices) from [tradingview](https://uk.tradingview.com/).
+- amazon_deals.py - Scrapes specified amazon products and returns current and previous prices.
+- quotes.py - Scrapes for randomised quotes from [goodreads](https://www.goodreads.com/quotes).
+- crypto_scrape.py - Scrapes from cryptocurrency data from [coinmarketcap](https://coinmarketcap.com/)
 
-## Web Scraping Tutorial
+## Tutorial
 The below section provides an introduction and basic tutorial for beginners interested at learning how to web scrape.
 
 ## Table of Contents
