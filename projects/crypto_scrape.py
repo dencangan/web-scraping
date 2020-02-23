@@ -6,7 +6,7 @@ Script for scraping daily btc prices from coin market cap.
 """
 
 from utils import soupify
-from utils import char_to_date
+from utils import convert_object_to_datetime
 from datetime import datetime
 import pandas as pd
 
@@ -54,7 +54,7 @@ class Crypto:
 
         df = pd.DataFrame(data)
 
-        df_ctd = char_to_date(s=df).sort_values('Date')
+        df_ctd = convert_object_to_datetime(s=df).sort_values('Date')
         df_ctd = df_ctd.set_index('Date')
         return df_ctd
 
@@ -75,7 +75,7 @@ class Crypto:
 
         df = pd.DataFrame(day_data, index=[0])
 
-        df_ctd = char_to_date(s=df).sort_values('Date')
+        df_ctd = convert_object_to_datetime(s=df).sort_values('Date')
         df_ctd = df_ctd.set_index('Date')
 
         return df_ctd

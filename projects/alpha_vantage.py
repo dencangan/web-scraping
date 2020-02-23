@@ -1,12 +1,7 @@
-"""Basic buy low sell high strategy
-
-TODO write profits to json, find a way to sum
+"""Testing alpha vantage API
 """
 
-import pandas as pd
 import json
-
-from utils import soupify
 
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
@@ -40,32 +35,6 @@ class Trade:
         sma, meta_sma = self.technical_indicator.get_sma(symbol=stock)
         return sma, meta_sma
 
-    def get_stocks(self, num_of_stocks):
-
-        html_page = soupify(self.link)
-
-        data = []
-        for x in (html_page.select('td')):
-            data.append(x.text)
-
-        keys = {}
-        for i, e in enumerate(self.labels):
-            keys[e] = data[i::11]
-
-        # Change to dataframe and format data to split name and ticker
-        df = pd.DataFrame(keys)
-        df['x'] = df['Ticker'].str.strip('\n').str.replace('\t', '').str.split('\n')
-        df[['(new_ticker)', 'Name', '(blank)']] = pd.DataFrame(df.x.values.tolist(), index=df.index)
-        df = df.drop(columns=['Ticker', '(blank)', 'x'])
-        df = df.rename(columns={'(new_ticker)': 'Ticker'})
-
-        stock_detail = df.head(num_of_stocks)[['Name', 'Ticker', 'Last', '% Change', 'Signal', 'Vol', 'Mkt Cap',
-                                               'Industry']]
-
-        tickers_lst = stock_detail['Ticker'].tolist()
-        print(tickers_lst)
-        return tickers_lst
-
     def execute(self, stock_data):
 
         # Starting price
@@ -90,13 +59,4 @@ class Trade:
                 print(timestamp, 'Loss making trade.')
 
 
-if __name__ == "__main__":
-    trade = Trade(region='usa', category='market-movers-gainers')
-
-    df = trade.get_stocks(num_of_stocks=3)
-
-    df, meta = trade.intraday_data(df[0], interval='5min')
-    today = df.loc['2020-01-24']
-    final = today.sort_index()
-    trade.execute(final)
 
