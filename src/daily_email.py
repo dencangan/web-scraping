@@ -1,6 +1,6 @@
 from utils import EmailObject
-from projects.quotes import get_quote
-from projects.wiki_search import wiki_summariser
+from src.quotes import get_quote
+from src.wiki_search import wiki_summariser
 from datetime import datetime
 
 day = datetime.today().strftime("%A")
