@@ -226,7 +226,7 @@ class EmailObject(object):
                     table, td {text-align: right; border: 1px solid black; font:13px arial; padding-right:5px} \
                     th { text-align: middle; }</style>'
 
-            self.email_text = css + '<p>' + email_text + '</p>'
+            self.email_text = css + '<body>{' + email_text + '}</body>'
 
         else:
             self.email_text = email_text
