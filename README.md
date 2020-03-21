@@ -8,6 +8,7 @@ To get the below scripts to work, install the below packages.
 * [google-search](https://pypi.org/project/google-search/)
 
 ## Scripts
+- covid19 - Scrapes and uploads UK COVID19 data to mongodb, sends email of daily cases summary.
 - wiki_search.py - Scrapes first few sentences of a specified search term from its wikipedia page for a quick summary.
 - trading_view.py - Scrapes financial asset data (cryptos, stocks, currencies and indices) from [tradingview](https://uk.tradingview.com/).
 - amazon_deals.py - Scrapes specified amazon products and returns current and previous prices.
