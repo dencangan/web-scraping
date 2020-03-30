@@ -9,6 +9,8 @@ import os
 from selenium import webdriver
 import time
 
+default_download_dir=r"C:\Users\Dencan Gan\Downloads"
+
 source_daily_confirmed = r"https://www.arcgis.com/sharing/rest/content/items/e5fd11150d274bebaaf8fe2a7a2bda11/data"
 source_county = r"https://www.arcgis.com/sharing/rest/content/items/b684319181f94875a6879bbc833ca3a6/data"
 source_nhsr = r"https://www.arcgis.com/sharing/rest/content/items/ca796627a2294c51926865748c4a56e8/data"
@@ -18,8 +20,6 @@ county_file = "CountyUAs_cases_table.csv"
 nhsr_file = "NHSR_Cases_table.csv"
 
 # Change this to your Chrome default download directory
-default_download_dir = r"C:\Users\Dencan Gan\Downloads"
-
 files = [daily_file, county_file, nhsr_file]
 
 # If you've already have the files, remove them
@@ -43,7 +43,6 @@ for file in files:
 
     if os.path.exists(file_dir):
         print(f"{file} downloaded successfully!")
-
 
 # Data frames
 df_daily = pd.read_excel(os.path.join(default_download_dir, daily_file))

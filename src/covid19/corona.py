@@ -18,7 +18,8 @@ def format_data(daily_lookback):
 
     # Uploaded data
     cases_yesterday = df_daily.tail(daily_lookback).reset_index().drop(columns=["index"])
-    cases_yesterday = cases_yesterday.rename(columns={"DateVal": "Date", "CMODateCount": "Daily Cases", "CumCases": "Total Cases"})
+    cases_yesterday = cases_yesterday.rename(columns={"DateVal": "Date", "CMODateCount": "Daily Cases", "CumCases":
+        "Total Cases"})
     cases_yesterday["Country"] = "United Kingdom"
     cases_yesterday = cases_yesterday[["Date", "Country", "Daily Cases", "Total Cases"]]
 
