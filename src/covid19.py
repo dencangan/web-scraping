@@ -6,7 +6,6 @@ import pandas as pd
 from arctic import Arctic
 from selenium import webdriver
 
-
 default_download_dir = r"C:\Users\Dencan Gan\Downloads"
 edcc_link = "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide.xlsx"
 
