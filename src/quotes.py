@@ -1,4 +1,4 @@
-from utils import soupify
+from src.utils import soupify
 import random
 
 

@@ -82,5 +82,5 @@ class AmazonDeals:
 
 if __name__ == '__main__':
 
-    deals = AmazonDeals(num_pages=1, search_product='nail varnish')
+    deals = AmazonDeals(num_pages=1, search_product='skipping ropes')
     df = deals.run()

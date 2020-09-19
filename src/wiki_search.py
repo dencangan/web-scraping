@@ -1,5 +1,5 @@
 from googlesearch import search
-from utils import soupify
+from src.utils import soupify
 
 
 def wiki_summariser(search_term=None, num_lines=5, randomise=False):

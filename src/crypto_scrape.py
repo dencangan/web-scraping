@@ -5,8 +5,8 @@ Author: Dencan Gan
 Script for scraping daily btc prices from coin market cap.
 """
 
-from utils import soupify
-from utils import convert_object_to_datetime
+from src.utils import soupify
+from src.utils import convert_object_to_datetime
 from datetime import datetime
 import pandas as pd
 

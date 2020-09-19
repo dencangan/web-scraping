@@ -2,7 +2,7 @@
 """
 
 import pandas as pd
-from utils import soupify
+from src.utils import soupify
 
 
 def parse_to_df(soup, labels):
