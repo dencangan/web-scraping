@@ -1,10 +1,19 @@
-# Web Scraping with Python
-Mini web scraping projects using Python and BeautifulSoup!
+# Web Scraping
+This project is centered around the use of Python web scraping packages such as BeautifulSoup and Selenium. The repository contains a basic comprehensive web scraping tutorial as well as some of my personal side projects!
+
+<p align="center">
+  <br>
+  <img height="400" width="800" src="src/img/internet-image.jpg">
+  <br>
+  <i>The internet is full of information.</i>
+</p>
+
 
 ## Prerequisites
 To get the below scripts to work, install the below packages.
 * [requests](https://pypi.org/project/requests/)
 * [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
+* [Selenium](https://www.selenium.dev/documentation/en/)
 * [google-search](https://pypi.org/project/google-search/)
 
 ## Scripts
@@ -21,7 +30,6 @@ The below section provides an introduction and basic tutorial for beginners inte
 ## Table of Contents
 * [Introduction](#introduction)
 * [Rules and Practice](#important-rules-and-practice-of-web-scraping)
-* [Getting Started](#getting-started)
 * [Documentation](#documentation)
 * [Set Up](#set-up)
 * [BeautifulSoup Parsing](#beautifulsoup-parsing)
